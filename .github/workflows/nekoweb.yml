@@ -15,16 +15,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # The checkout step copies your repo into the action runner. Important!
-    - uses: actions/checkout@v4
-  
-    # When the dist_dir is ready, deploy it to neocities
-    # Here we deploy the folder named `public`
-    - name: Deploy to nekoweb
-      uses: bcomnes/deploy-to-neocities@v3
-      with:
-        api_key: ${{ secrets.NEKOWEB_API_TOKEN }}
-        cleanup: true
-        neocities_supporter: false # set this to true if you have a supporter account and want to bypass unsuported files filter.
-        preview_before_deploy: true # print a deployment plan prior to waiting for files to upload.
-        dist_dir: public
+      # The checkout step copies your repo into the action runner. Important!
+      - uses: actions/checkout@v4
+
+      # When the dist_dir is ready, deploy it to neocities
+      # Here we deploy the folder named `public`
+      - name: Deploy to nekoweb
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_key: ${{ secrets.NEKOWEB_API_TOKEN }}
+          cleanup: true
+          neocities_supporter: false # set this to true if you have a supporter account and want to bypass unsuported files filter.
+          preview_before_deploy: true # print a deployment plan prior to waiting for files to upload.
+          dist_dir: public
