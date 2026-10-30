@@ -1,4 +1,4 @@
 const tabTitle = document.title; 
 if (tabTitle !== "YOUR HOME TITLE") { 
-	document.title = tabTitle + " | some text"; 
+	document.title = tabTitle + " | rose's character archive"; 
 }
